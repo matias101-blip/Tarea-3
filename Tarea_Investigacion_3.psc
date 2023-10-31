@@ -12,8 +12,7 @@ FinAlgoritmo
 
 
 Funcion Menu(Arreglo)
-	Definir Verificar
-	Escribir Arreglo;
+	Escribir "Hola Maricon"
 	
 FinFuncion
 
