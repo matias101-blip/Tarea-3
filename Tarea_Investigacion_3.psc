@@ -12,7 +12,7 @@ FinAlgoritmo
 
 
 Funcion Menu(Arreglo)
-	Escribir "Hola Maricon"
+	Escribir "El jenner es gai";
 	
 FinFuncion
 
