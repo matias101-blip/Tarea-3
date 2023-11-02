@@ -9,6 +9,11 @@ Algoritmo Tarea_Investigacion_3
 	
 FinAlgoritmo
 
+Funcion Menu(Arreglo)
+	Escribir "El jenner es gai";
+	
+FinFuncion
+
 Funcion ejercicio1 
 	//Declaro variables como real ya que el pseudocodigo no va a terminar en muneros enteros
 	//Aplico la condicon si y sino para comparar y formula
@@ -206,11 +211,6 @@ Funcion ejercicio8
     FinSi
     nuevoLimite <- (limiteActual + aumento) * 1.10
     Escribir "El nuevo límite de crédito es: $", nuevoLimite
-FinFuncion
-
-Funcion Menu(Arreglo)
-	Escribir "El jenner es gai";
-	
 FinFuncion
 
 
