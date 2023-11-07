@@ -130,6 +130,26 @@ Funcion Menu_Numeros(Seleccion, i, contador)
 			Limpiar Pantalla
 			ejercicio16
 			Esperar 8 segundos
+		17:
+			Limpiar Pantalla
+			ejercicio17
+			Esperar 8 segundos
+		18:
+			Limpiar Pantalla
+			ejercicio18
+			Esperar 8 segundos
+		19:
+			Limpiar Pantalla
+			ejercicio19
+			Esperar 8 segundos
+		20:
+			Limpiar Pantalla
+			ejercicio20
+			Esperar 8 segundos
+		21:
+			Limpiar Pantalla
+			ejercicio21
+			Esperar 8 segundos
 		De Otro Modo:
 			Escribir "Ninguna opcion seleccionada, regresando al menu"
 	Fin Segun
@@ -160,40 +180,96 @@ Funcion Menu_Cadenas
 	Segun Seleccion Hacer
 		1:
 			Limpiar Pantalla
-			Ejercicio1
+			ejercicio_1
 			Esperar 8 segundos
 		2:
 			Limpiar Pantalla
-			Ejercicio2
+			ejercicio_2
 			Esperar 8 segundos
 		3:
 			Limpiar Pantalla
-			Ejercicio3
+			ejercic_3
 			Esperar 8 segundos
 		4:
 			Limpiar Pantalla
-			Ejercicio4
+			ejercicio_4
 			Esperar 8 segundos
 		5:
 			Limpiar Pantalla
-			Ejercicio5
+			ejercicio_5
 			Esperar 8 segundos
 		6:
 			Limpiar Pantalla
-			Ejercicio6
+			Ejercicio_6
 			Esperar 8 segundos
 		7:
 			Limpiar Pantalla
-			Ejercicio7
+			Ejercicio_7
 			Esperar 8 segundos
 		8:
 			Limpiar Pantalla
-			Ejercicio8
+			Ejercicio_8
 			Esperar 8 segundos
 		9:
 			Limpiar Pantalla
-			Ejercicio9
+			Ejercicio_9
 			Esperar 8 segundos
+		10:
+			Limpiar Pantalla
+			Ejercicio_10
+			Esperar 8 segundos
+		11:
+			Limpiar Pantalla
+			Ejercicio_11
+			Esperar 8 segundos
+		12:
+			Limpiar Pantalla
+			Ejercicio_12
+			Esperar 8 segundos
+		13:
+			Limpiar Pantalla
+			Ejercicio_13
+			Esperar 8 segundos
+		14:
+			Limpiar Pantalla
+			Ejercicio_14
+			Esperar 8 segundos
+		15:
+			Limpiar Pantalla
+			ejercicio_15
+			Esperar 8 Segundos
+		16:
+			Limpiar Pantalla
+			ejercicio_16
+			Esperar 8 Segundos
+		17:
+			Limpiar Pantalla
+			Ejercicio_17
+			Esperar 8 segundos
+		18:
+			Limpiar Pantalla
+			ejercicio_18
+			Esperar 8 Segundos
+		19:
+			Limpiar Pantalla
+			ejercicio_19
+			Esperar 8 Segundos
+		20:
+			Limpiar Pantalla
+			Ejercicio_20
+			Esperar 8 segundos
+		21:
+			Limpiar Pantalla
+			ejercicio_21
+			Esperar 8 Segundos
+		22:
+			Limpiar Pantalla
+			ejercicio_22
+			Esperar 8 Segundos
+		23:
+			Limpiar Pantalla
+			ejercicio_23
+			Esperar 8 Segundos
 		De Otro Modo:
 			Escribir "Ninguna opcion seleccionada, regresando al menu"
 	FinSegun
@@ -435,7 +511,6 @@ Funcion ejercicio9
 FinFuncion
 //Salida: Mostrar mensaje de num cuando cumple con alguna condicion dada
 
-//Cadenas y Arreglos
 
 Funcion ejercicio10
 	//Entrada:	
@@ -728,3 +803,948 @@ Funcion ejercicio16
 	Escribir "La suma de los divisores de ", num, " es ", sumaDiv
 	
 FinFuncion
+
+//Escribir un algoritmo que presente la cantidad de los divisores de un numero
+Funcion ejercicio17
+	Escribir "Ingrese un número:"
+    Leer num
+    cont = 0
+    Para i = 1 Hasta num Con Paso 1 Hacer
+        Si num MOD i = 0 Entonces
+            cont = cont + 1
+        FinSi
+    FinPara
+    Escribir "La cantidad de divisores de ", num, " es: ", cont
+FinFuncion
+
+//Escribir un algoritmo que indique si un número es perfecto
+//	Nota: un número es perfecto cuando la suma de los divisores del número incluido el 1 y
+//		excluido el propio número es igual al numero
+//	Ejemplo: numero=6: los divisores del 6 son: 1+2+3=6
+Funcion ejercicio18
+	Escribir "Ingrese un número:"
+    Leer num
+    suma = 0
+    Para i = 1 Hasta num/2 Con Paso 1 Hacer
+        Si num MOD i = 0 Entonces
+            suma = suma + i
+        FinSi
+    FinPara
+    Si suma = num Entonces
+        Escribir "El número ", num, " es perfecto."
+    Sino
+        Escribir "El número ", num, " no es perfecto."
+    FinSi
+FinFuncion
+
+//Dado un número N determinar si es un número primo.
+//Nota: Un número primo es aquel que solo es divisible por 1(uno) y por el mismo.
+Funcion ejercicio19
+	Escribir "Ingrese un número:"
+    Leer num
+    primo = Verdadero
+    Para i = 2 Hasta num-1 Con Paso 1 Hacer
+        Si num MOD i = 0 Entonces
+            primo <- Falso
+            
+        FinSi
+    FinPara
+    Si primo Entonces
+        Escribir "El número ", num, " es primo."
+    Sino
+        Escribir "El número ", num, " no es primo."
+    FinSi
+FinFuncion
+
+//Dado dos números determinar si son primos gemelos.
+//Nota: Dos números son primos gemelos si los dos son primos y su resta en valor absoluto es
+//	igual a 2. Ejemplo: 7 y 5
+Funcion ejercicio20
+	Definir num1, num2, i, contador Como Entero
+    Escribir "Ingrese el primer número:"
+    Leer num1
+    Escribir "Ingrese el segundo número:"
+    Leer num2
+    Si num1 - num2 = 2 Entonces
+        Para i <- 2 Hasta num1 - 1 Hacer
+            Si num1 mod i = 0 Entonces
+                contador = contador + 1
+            FinSi
+        FinPara
+        Para i <- 2 Hasta num2 - 1 Hacer
+            Si num2 mod i = 0 Entonces
+                contador = contador + 1
+            FinSi
+        FinPara
+        Si contador = 0 Entonces
+            Escribir num1, " y ", num2, " son primos gemelos."
+        Sino
+            Escribir num1, " y ", num2, " no son primos gemelos."
+        FinSi
+    Sino
+        Escribir num1, " y ", num2, " no son primos gemelos."
+    FinSi
+FinFuncion
+
+//Dado dos números determinar si son primos amigos.
+//Nota: Dos números son primos amigos si las sumas de los divisores del numero1 es igual a la
+//	suma de los divisores del numero2. Ejemplo: 6(1+2+3=6) y 25(1+5=6)
+Funcion ejercicio21
+	Definir num1, num2, i, suma1, suma2 Como Entero
+	Escribir "Ingrese el primer número:"
+	Leer num1
+	Escribir "Ingrese el segundo número:"
+	Leer num2
+	
+	suma1 = 0
+	suma2 = 0
+	
+	Para i = 1 Hasta num1 - 1 Hacer
+		Si num1 mod i = 0 Entonces
+			suma1 = suma1 + i
+		FinSi
+	FinPara
+	
+	Para i = 1 Hasta num2 - 1 Hacer
+		Si num2 mod i = 0 Entonces
+			suma2 = suma2 + i
+		FinSi
+	FinPara
+	
+	Si suma1 = suma2 Entonces
+		Escribir num1, " y ", num2, " son primos amigos."
+	Sino
+		Escribir num1, " y ", num2, " no son primos amigos."
+	FinSi
+FinFuncion
+
+//Cadenas y arreglos
+
+
+//1) Dada n realizar un algoritmo que presente la siguiente secuencia
+//	n=6
+//	respuesta= 2 2 4 8 32 256
+//Bosquejo del problema:)
+//Entrada: n=0?(Leida) i=0(Valor inicial); a=0(Valor inicial) b=1(Valor inicial) c=2(Valor inicial
+//Proceso:  Para i = 0 Hasta n-1 Hacer
+//             Escribir Sin Saltar c, " "
+//              a = b 
+//              b = c
+//              c = a * b
+//          FinPara
+//Salida: c
+Funcion ejercicio_1
+	//Entrada:
+	Definir n, a, b, c, i Como Real
+	n=0; i=0; a=0; b=1; c=2
+	Escribir "Ingrese el valor de n"
+	Leer n
+	//Proceso:
+	Para i = 0 Hasta n-1 Hacer
+		Escribir Sin Saltar c, " "
+		a = b 
+		b = c
+		c = a * b
+	FinPara
+	Escribir " "
+	//Salida: c	
+FinFuncion
+
+
+//Implementa un programa que calcule el promedio de los elementos pares e impares en un
+//arreglo de números enteros y los copie en otro arreglo
+//Entrada: arreglo = 0?(leido), arreglo2 = 0(proceso), contador_pares = 0, contador_impares = 0
+Funcion ejercicio_2
+	Definir arreglo, arreglo2, contador_pares, contador_impares, contador Como Entero;
+	Dimension arreglo2[2];
+	
+	Escribir "Ingerese la cantidad de numeros a ingresar";
+	
+	leer contador;
+	
+	Dimension arreglo[contador]
+	
+	Limpiar Pantalla;
+	
+	para i = 1 hasta contador
+		Escribir "Ingrese un numero: ";
+		Leer arreglo[i];
+	FinPara
+	
+	para i =1 hasta contador
+		si arreglo[i] mod 2 == 0
+			pares = arreglo[i] + pares;
+			contador_pares = contador_pares + 1
+		SiNo
+			impares = arreglo[i] + impares
+			contador_impares = contador_impares + 1
+		FinSi
+	FinPara
+	
+	si contador_pares == 0
+		arreglo2[1] = 0
+	SiNo
+		arreglo2[1] = trunc(pares / contador_pares);
+	FinSi
+	
+	Si contador_impares == 0
+		arreglo2[2] = 0
+	SiNo
+		arreglo2[2] = trunc(impares / contador_impares);
+	FinSi
+	
+	Escribir "Los numeros ingresados son: ";
+	para i = 1 Hasta contador
+		Escribir sin saltar " ",arreglo[i];
+	FinPara
+	
+	Escribir "";
+	Escribir "El promedio de los pares y impares son: ";
+	Escribir "Pares: ", arreglo2[1];
+	Escribir "Impares: ", arreglo2[2];
+	
+FinFuncion
+
+
+//3) Dada n realizar un algoritmo que presente la siguiente secuencia
+//		n=6
+//		respuesta= 20 5 15 10 5 -5 0
+//Bosquejo del problema:
+//Entrada: arreglo[6]  i=0(Valor inicial)
+//Proceso=   Para i=0 hasta 5 con paso 1 Hacer
+//            Escribir Sin Saltar arreglo[i], " "
+//           FinPara
+//Salida: arreglo[i]
+Funcion ejercic_3
+	//Entrada:
+	Definir arreglo,i Como Entero
+	Dimension arreglo[6]
+	arreglo(0)=20
+	arreglo(1)=5
+	arreglo(2)=15
+	arreglo(3)=5
+	arreglo(4)=-5
+	arreglo(5)=0
+	//Proceso:	
+	Para i=0 hasta 5 con paso 1 Hacer
+		Escribir Sin Saltar arreglo[i], " "
+	FinPara
+	Escribir " "
+	//Salida: arreglo[i]
+FinFuncion
+
+
+//	4) Implementa un programa que copie los números de un arreglo a 2 arreglos en uno los
+//	números positivos y en el otro los negativos Ejemplo:
+//	arreglo=[2,-6,4,-9, 12] arregloPositivo=[2,4,12] arregloNegativo[-6,-9]
+//Bosquejo del problema
+//Entrada:num[0](arreglo)  positivos[0](arreglo), negativos[0](arreglo), cantidad=0?(leida), cPositivos=0(calculada), cNegativos=0(calculada), i=0(Valor inicial)
+//Proceso: Para i = 0 hasta cantidad - 1 Con Paso 1 Hacer
+//             escribir "Ingresa el valor de la posición", i
+//             Leer num[i]
+//             si num[i] > 0 Entonces
+//	               positivos[cPositivos] = num[i]
+//	               cPositivos = cPositivos + 1
+//             SiNo
+//	                negativos[cNegativos] = num[i]
+//	                cNegativos = cNegativos + 1
+//             FinSi
+//        FinPara
+//Salida: positivos[i], negativos[i]
+Funcion ejercicio_4
+	
+	//Entrada
+	Definir num, positivos, negativos, cantidad, cPositivos, cNegativos, i Como Entero
+	cPositivos = 0; cNegativos = 0; i =0
+	Escribir "Ingrese el tamaño del arreglo " 
+	Leer cantidad
+	Dimension num[cantidad]
+	Dimension positivos[cantidad]
+	Dimension negativos[cantidad]
+	//Proceso
+	Para i = 0 hasta cantidad - 1 Con Paso 1 Hacer
+		escribir "Ingresa el valor de la posición ", i ,":"
+		Leer num[i]
+		si num[i] > 0 Entonces
+			positivos[cPositivos] = num[i]
+			cPositivos = cPositivos + 1
+		SiNo
+			negativos[cNegativos] = num[i]
+			cNegativos = cNegativos + 1
+		FinSi
+	FinPara
+	
+	Escribir "Arreglo positivos"
+	Para i = 0 hasta cPositivos - 1 Con Paso 1 Hacer
+		Escribir Sin Saltar positivos[i], ","
+	FinPara
+	Escribir " "
+	
+	Escribir "Arreglo negativos"
+	Para i = 0 hasta cNegativos - 1 Con Paso 1 Hacer
+		Escribir Sin Saltar negativos[i], ","
+	FinPara
+	Escribir " "
+	//Salida: positivos[i], negativos[i]	
+FinFuncion
+
+//Leer una secuencia de números hasta que se ingrese un numero negativo.
+//Mostrar la suma de los pares y la cantidad de los números que son múltiplo de 3
+//Ejemplo:
+//secuencia: 4,14,3,0,21,2,-4
+//	Respuesta
+//	paresSuma=20
+//	contMuliplos3=2
+Funcion ejercicio_5
+	Definir arreglo, contadorM, contador, suma_pares Como Entero;
+	Definir Verificador Como Logico;
+	
+	Dimension arreglo[1000];
+	
+	Verificador = Falso
+	
+	Escribir "Ingrese un numero, si ingresa un numero negativo se para la lectura; ";
+	
+	Mientras Verificador == Falso
+		i = i + 1;
+		Leer arreglo[i];
+		si arreglo[i] < 0
+			Verificador = Verdadero;
+		FinSi
+		contador = contador + 1
+	FinMientras
+	
+	para i = 1 hasta contador
+		si arreglo[i] mod 2 == 0 y arreglo[i] >= 0
+			suma_pares = arreglo[i] + suma_pares;
+			Escribir suma_pares;
+		SiNo
+			si arreglo[i] mod 3 == 0
+				contadorM = contadorM + 1
+			FinSi
+		FinSi
+	FinPara
+	
+	Escribir "Respuestas; ";
+	Escribir "La suma de los pares son: ", suma_pares;
+	Escribir "Los numeros multiplos de 3 son: ", contadorM;
+	
+FinFuncion
+
+
+//Leer una secuencia de números hasta que se ingrese un 0
+//y almacenarlos en un arreglo
+//Se pide recorrer el arreglo y mostrar la suma del cuadrado de cada numero.
+//Ejemplo: secuencia: 4,3,2,5,0
+//		arreglo=[4,3,2,5]
+//		exponentes= 16 9 4 25
+//		respuestaSuma=54
+Funcion ejercicio_6
+	Definir arreglo, exponentes, contador, suma Como Entero;
+	Definir Verificador Como Logico;
+	
+	Dimension arreglo[1000];
+	
+	Verificador = Falso
+	
+	Escribir "Ingrese un numero, si ingresa 0 se para la lectura; ";
+	
+	Mientras Verificador == Falso
+		i = i + 1;
+		Leer arreglo[i];
+		si arreglo[i] == 0
+			Verificador = Verdadero;
+		FinSi
+		contador = contador + 1
+	FinMientras
+	
+	Dimension exponentes[contador]
+	
+	para i = 1 hasta contador
+		si arreglo[i] > 0
+			exponentes[i] = arreglo[i] * arreglo[i];
+			suma = exponentes[i] + suma;
+		FinSi
+	FinPara
+	
+	Escribir "Respuestas: ";
+	Escribir "Los exponentes son: ";
+	contador = contador - 1;
+	para i = 1 hasta contador
+		Escribir Sin Saltar " ",exponentes[i];
+	FinPara
+	
+	Escribir " ";
+	Escribir "La suma de los exponentes es: ", suma;
+	
+FinFuncion
+
+
+//Leer una secuencia de números hasta que se ingrese un numero par.
+//Mostrar la cantidad de los números mayores a 5 y la suma de los múltiplos de 5
+//Ejemplo:
+//secuencia: 3,5,15,7,9, 4
+//	Respuesta
+//	contMay5=3
+//	sumaMultiplos5=20
+Funcion ejercicio_7
+	Definir arreglo, contadorMay5, contador, suma Como Entero;
+	Definir Verificador Como Logico;
+	
+	Dimension arreglo[1000];
+	
+	Verificador = Falso
+	
+	Escribir "Ingrese un numero, si ingresa un numero par se para la lectura; ";
+	
+	Mientras Verificador == Falso
+		i = i + 1;
+		Leer arreglo[i];
+		si arreglo[i] mod 2 == 0
+			Verificador = Verdadero;
+		FinSi
+		contador = contador + 1
+	FinMientras
+	
+	para i = 1 hasta contador
+		si arreglo[i] > 5
+			contadorMay5 = contadorMay5 + 1;
+		FinSi
+		
+		si arreglo[i] mod 5 == 0
+			suma = arreglo[i] + suma
+		FinSi
+	FinPara
+	
+	Escribir "Respuestas: ";
+	Escribir "Numeros mayores a 5: ", contadorMay5;
+	Escribir "La suma de los multiplos de 5 es: ", suma;
+	
+FinFuncion
+
+//Leer una secuencia de números hasta que se ingrese un numero negativo
+//y almacenarlos en un arreglo
+//Se pide recorrer el arreglo y mostrar la suma de cada número elevado al cubo.
+//Ejemplo: secuencia: 4,3,2,5,-1
+//		arreglo=[4,3,2,5]
+//		exponentes= 64 27 8 125
+//		respuestaSuma=224
+Funcion ejercicio_8
+	Definir arreglo, exponentes, contador, suma Como Entero;
+	Definir Verificador Como Logico;
+	
+	Dimension arreglo[1000];
+	
+	Verificador = Falso
+	
+	Escribir "Ingrese un numero, si ingresa un numero negativo se para la lectura; ";
+	
+	Mientras Verificador == Falso
+		i = i + 1;
+		Leer arreglo[i];
+		si arreglo[i] < 0
+			Verificador = Verdadero;
+		FinSi
+		contador = contador + 1
+	FinMientras
+	
+	Dimension exponentes[contador]
+	
+	para i = 1 hasta contador
+		si arreglo[i] > 0
+			exponentes[i] = arreglo[i] * arreglo[i] * arreglo[i];
+			suma = exponentes[i] + suma;
+		FinSi
+	FinPara
+	
+	Escribir "Respuestas: ";
+	Escribir "Los exponentes son: ";
+	contador = contador - 1;
+	para i = 1 hasta contador
+		Escribir Sin Saltar " ",exponentes[i];
+	FinPara
+	
+	Escribir " ";
+	Escribir "La suma de los exponentes es: ", suma;
+	
+FinFuncion
+
+//Dado una frase indicar cuantas palabras tiene
+//Ejemplo:
+//	frase="hola que tal".
+//	contPalabras=3
+Funcion ejercicio_9
+	Definir Frase Como Caracter;
+	Definir contador, contadorPalabra Como Entero;
+	
+	Escribir "Ingrese una frace: ";
+	Leer Frase;
+	
+	contador = Longitud(Frase);
+	
+	para i = 1 hasta contador
+		caracter_ = Subcadena(Frase, i, i)
+		si caracter_ == " "
+			contadorPalabra = contadorPalabra + 1;
+		FinSi
+	FinPara
+	
+	Escribir "La frase ", Frase;
+	Escribir "Tiene ", contadorPalabra, " palabras";
+FinFuncion
+
+//Leer una secuencia de números hasta que se ingrese un numero negativo
+//y almacenarlos en arreglo. Se pide recorrer el arreglo y cambiar cada
+//elemento del arreglo por su doble.
+//Ejemplo: secuencia: 4,3,6,9,0
+//		arreglo=[4,3,6,9] = [8,6,12,18
+Funcion ejercicio_10
+	Definir numero como Entero
+    Definir i como Entero
+	Dimension arreglo[1000] 
+	
+    i <- 1
+	
+    Mientras numero >= 0
+        Escribir "Ingrese un número (ingrese un número negativo para terminar): "
+        Leer numero
+        Si numero >= 0 Entonces
+            arreglo[i] <- numero
+            i <- i + 1
+        FinSi
+    FinMientras
+	
+    Escribir "Arreglo original: ["
+    Para i <- 1 Hasta i - 1
+        Escribir arreglo[i]
+        Si i < i - 1 Entonces
+            Escribir ","
+        FinSi
+    FinPara
+    Escribir "]"
+	
+    Escribir "Arreglo con elementos duplicados: ["
+    Para i <- 1 Hasta i - 1
+        arreglo[i] <- arreglo[i] * 2
+        Escribir arreglo[i]
+        Si i < i - 1 Entonces
+            Escribir ","
+        FinSi
+    FinPara
+    Escribir "]"
+FinFuncion
+
+
+//Leer una secuencia de caracteres hasta que se ingrese un punto.
+//Deberá mostrar cuantos "x" se ingresaron
+//Ejemplo:
+//	secuencia="axyrx".
+//	contX= 2
+Funcion ejercicio_11
+	Definir secuencia, caracter Como Caracter
+    Definir contX Como Entero
+    contX <- 0
+	
+    Escribir "Ingrese una secuencia de caracteres (ingrese un punto para terminar): "
+    Leer secuencia
+	
+    Para i <- 1 Hasta Longitud(secuencia)
+        caracter <- SubCadena(secuencia, i, 1)
+        Si caracter = "x" Entonces
+            contX <- contX + 1
+        FinSi
+    FinPara
+	
+    Escribir "Cantidad de x ingresados: ", contX
+FinFuncion
+
+//eer una secuencia de números hasta que se ingrese un 0
+//y almacenarlos en arreglo. Se pide recorrer el arreglo y pasar a otro
+//arreglo solo los números pares de cada elemento del arreglo1
+//Ejemplo: secuencia: 4,3,6,9,0
+//		arreglo1=[4,3,6,9] arreglo2= [4,6]
+Funcion ejercicio_12
+    Definir arreglo, arreglo2 Como Entero
+    Definir i, contador, numero Como Entero
+    Definir Verificador Como Logico
+	
+    Dimension arreglo[1000]
+	
+    Verificador = Falso
+    contador = 1
+	
+    Escribir "Ingrese una secuencia de números (ingrese 0 para terminar): "
+	
+    Mientras Verificador == Falso
+        Leer numero
+        Si numero = 0
+            Verificador = Verdadero
+        Sino
+            arreglo[contador] <- numero
+            contador <- contador + 1
+        FinSi
+    FinMientras
+	
+    Dimension arreglo2[contador]
+    i <- 1
+	
+    Para j <- 1 Hasta contador
+        Si arreglo[j] MOD 2 = 0
+            arreglo2[i] <- arreglo[j]
+            i <- i + 1
+        FinSi
+    FinPara
+	
+    Escribir "Arreglo1: ["
+    Para j <- 1 Hasta contador
+        Escribir arreglo[j]
+        Si j < contador - 1 Entonces
+            Escribir ","
+        FinSi
+    FinPara
+    Escribir "]"
+	
+    Escribir "Arreglo2 (Números pares de arreglo1): ["
+    Para j <- 1 Hasta i
+        Escribir arreglo2[j]
+        Si j < i - 1 Entonces
+            Escribir ","
+        FinSi
+    FinPara
+    Escribir "]"
+	
+FinFuncion
+
+//Dado dos números presentar los valores mayores a 5 entre ellos incluidos el numero inicial
+//y final
+//Ejemplo: numero1=2 numero2=10
+//	salida= 6 7 8 9 10
+Funcion ejercicio_13
+	Definir numero1, numero2 Como Entero
+	
+    Escribir "Ingrese el primer número: "
+    Leer numero1
+	
+    Escribir "Ingrese el segundo número: "
+    Leer numero2
+	
+    Si numero1 > numero2
+       numero1 = numero2
+    FinSi
+	
+    Escribir "Números mayores a 5 entre ", numero1, " y ", numero2, " (incluyendo ambos):"
+	
+    Para i <- numero1 Hasta numero2
+        Si i > 5
+            Escribir i
+        FinSi
+    FinPara
+FinFuncion
+
+//Elaborar un algoritmo que lea una serie de edades de los alumnos de la facultad FACI y
+//los guarde en un arreglo. Se pide:
+//	· calcular el promedio general de las edades de los alumnos
+//	· La cantidad y el promedio de las edades mayores o iguales a 18
+//	· La cantidad y el promedio de las edades menores a 18
+Funcion ejercicio_14
+    Definir edades, edadesMayores18, edadesMenores18 Como Real
+    Definir sumaEdades, sumaMayores18, sumaMenores18 Como Real
+    Definir cantidadAlumnos, cantidadMayores18, cantidadMenores18 Como Entero
+    Definir edad Como Real
+    Definir i Como Entero
+	
+    Escribir "Ingrese la cantidad de alumnos en la facultad: "
+    Leer cantidadAlumnos
+	dimension edades[cantidadAlumnos]
+	Dimension edadesMayores18[1000]
+	Dimension edadesMenores18[1000]
+    i <- 1
+    sumaEdades <- 0
+    sumaMayores18 <- 0
+    sumaMenores18 <- 0
+    cantidadMayores18 <- 0
+    cantidadMenores18 <- 0
+	
+    Mientras i <= cantidadAlumnos
+        Escribir "Ingrese la edad del alumno ", i, ": "
+        Leer edad
+        edades[i] <- edad
+        sumaEdades <- sumaEdades + edad
+		
+        Si edad >= 18 Entonces
+            cantidadMayores18 <- cantidadMayores18 + 1
+            edadesMayores18[cantidadMayores18] <- edad
+            sumaMayores18 <- sumaMayores18 + edad
+        Sino
+            cantidadMenores18 <- cantidadMenores18 + 1
+            edadesMenores18[cantidadMenores18] <- edad
+            sumaMenores18 <- sumaMenores18 + edad
+        FinSi
+		
+        i <- i + 1
+    FinMientras
+	
+    PromedioGeneral <- sumaEdades / cantidadAlumnos
+	
+    Si cantidadMayores18 > 0 Entonces
+        PromedioMayores18 <- sumaMayores18 / cantidadMayores18
+    Sino
+        PromedioMayores18 <- 0
+    FinSi
+	
+    Si cantidadMenores18 > 0 Entonces
+        PromedioMenores18 <- sumaMenores18 / cantidadMenores18
+    Sino
+        PromedioMenores18 <- 0
+    FinSi
+	
+    Escribir "Promedio general de edades: ", PromedioGeneral
+    Escribir "Cantidad de edades mayores o iguales a 18: ", cantidadMayores18
+    Escribir "Promedio de edades mayores o iguales a 18: ", PromedioMayores18
+    Escribir "Cantidad de edades menores a 18: ", cantidadMenores18
+    Escribir "Promedio de edades menores a 18: ", PromedioMenores18
+	
+FinFuncion
+
+//Dado dos números presentar los valores Impares comprendidos entre ellos(excluidos el
+//valor inicial y final)
+//Ejemplo: numero1=2 numero2=11
+//salida: 3 5 7 9
+Funcion ejercicio_15
+	Definir numero1, numero2 Como Entero
+	
+    Escribir "Ingrese el primer número: "
+    Leer numero1
+	
+    Escribir "Ingrese el segundo número: "
+    Leer numero2
+	
+    Si numero1 > numero2
+        numero1 = numero2
+    FinSi
+	
+    Escribir "Números impares entre ", numero1, " y ", numero2, " (excluyendo ambos):"
+	
+    Para i <- numero1 + 1 Hasta numero2 - 1
+        Si i MOD 2 <> 0
+            Escribir i
+        FinSi
+    FinPara
+FinFuncion
+
+//Elaborar un algoritmo que lea una serie de sueldos de los empleados de la unemi y los
+//guarde en un arreglo. Se pide:
+//	· Presentar el sueldo más alto de los empleados
+//	· La cantidad y el promedio de os sueldos de los empleados
+//Ejemplo:
+//	sueldos=[500,700,800,600]
+//	SueldoMasAlto= 800
+//	cantidadSueldos=4 promedioGeneral=650
+Funcion ejercicio_16
+	Definir sueldos, SueldoMasAlto Como Real
+    Definir cantidadSueldos Como Entero
+    Definir sumaSueldos Como Real
+    Definir sueldo Como Real
+    Definir i Como Entero
+	
+    Escribir "Ingrese la cantidad de empleados en la UNEMI: "
+    Leer cantidadSueldos
+	Dimension sueldos[cantidadSueldos]
+	
+    Para i <- 1 Hasta cantidadSueldos
+        Escribir "Ingrese el sueldo del empleado ", i, ": "
+        Leer sueldo
+        sueldos[i] <- sueldo
+        sumaSueldos <- sumaSueldos + sueldo
+        Si i = 1 O sueldo > SueldoMasAlto
+            SueldoMasAlto <- sueldo
+        FinSi
+    FinPara
+	
+    PromedioGeneral <- sumaSueldos / cantidadSueldos
+	
+    Escribir "Sueldo más alto: ", SueldoMasAlto
+    Escribir "Cantidad de sueldos: ", cantidadSueldos
+    Escribir "Promedio de sueldos: ", PromedioGeneral
+FinFuncion
+
+Funcion ejercicio_17
+	Definir frase1, frase2 Como Caracter
+    Definir longitudFrase1, longitudFrase2 Como Entero
+	
+    Escribir "Ingrese la primera frase: "
+    Leer frase1
+    longitudFrase1 <- Longitud(frase1)
+	
+    Escribir "Ingrese la segunda frase: "
+    Leer frase2
+    longitudFrase2 <- Longitud(frase2)
+	
+    Si longitudFrase1 > longitudFrase2
+        Escribir "La primera frase es más larga."
+    Sino Si longitudFrase2 > longitudFrase1
+			Escribir "La segunda frase es más larga."
+		Sino
+			Escribir "Ambas frases tienen la misma longitud."
+		FinSi
+	FinSi
+	
+FinFuncion
+
+Funcion ejercicio_18
+	Definir cadena Como Caracter
+    Definir contadorPuntuacion Como Entero
+    Definir i Como Entero
+	
+    Escribir "Ingrese una cadena: "
+    Leer cadena
+	
+    contadorPuntuacion <- 0
+	
+    Para i <- 1 Hasta Longitud(cadena)
+        Si SubCadena(cadena, i, 1) = "," O SubCadena(cadena, i, 1) = "." O SubCadena(cadena, i, 1) = ";" O SubCadena(cadena, i, 1) = ":"
+            contadorPuntuacion <- contadorPuntuacion + 1
+        FinSi
+    FinPara
+	
+    Escribir "Cantidad de ,.;: en la cadena: ", contadorPuntuacion
+
+FinFuncion
+
+Funcion ejercicio_19
+	Definir cadena Como Caracter
+    Definir contadorVocales, contadorConsonantes, contadorDigitos Como Entero
+    Definir i Como Entero
+    Definir caracter Como Caracter
+	
+    Escribir "Ingrese una cadena: "
+    Leer cadena
+	
+    contadorVocales <- 0
+    contadorConsonantes <- 0
+    contadorDigitos <- 0
+	
+    Para i <- 1 Hasta Longitud(cadena)
+        caracter <- SubCadena(cadena, i, 1) 
+		
+        Si caracter >= "a" Y caracter <= "z" Entonces
+            Si caracter = "a" O caracter = "e" O caracter = "i" O caracter = "o" O caracter = "u"
+                contadorVocales <- contadorVocales + 1
+            Sino
+                contadorConsonantes <- contadorConsonantes + 1
+            FinSi
+        Sino Si caracter >= "0" Y caracter <= "9" Entonces
+				contadorDigitos <- contadorDigitos + 1
+			FinSi
+		FinSi
+		
+	FinPara
+		
+		Escribir "Cantidad de vocales: ", contadorVocales
+		Escribir "Cantidad de consonantes: ", contadorConsonantes
+		Escribir "Cantidad de dígitos: ", contadorDigitos
+FinFuncion
+
+Funcion ejercicio_20
+	Definir frase Como Caracter
+    Definir palabras Como Entero
+    Definir i Como Entero
+	
+    Escribir "Ingrese una frase: "
+    Leer frase
+	
+    palabras <- 0
+	
+    Para i <- 1 Hasta Longitud(frase)
+        Si SubCadena(frase, i, 1) = " " Entonces
+            Si i > 1 Y SubCadena(frase, i - 1, 1) <> " "  // Comprueba si el carácter anterior no es un espacio
+                palabras <- palabras + 1
+            FinSi
+        Sino Si i = Longitud(frase)  // Comprueba si estamos en el último carácter de la cadena
+				palabras <- palabras + 1
+			FinSi
+		FinSi
+	FinPara
+		
+		Escribir "Cantidad de palabras en la frase: ", palabras
+
+FinFuncion
+
+Funcion ejercicio_21
+	Definir cedula, digito, suma Como Entero
+	
+    Escribir "Ingrese el número de cédula: "
+    Leer cedula
+	
+    suma <- 0
+	
+    Mientras cedula > 0
+        digito <- cedula MOD 10  // Obtiene el último dígito
+        suma <- suma + digito  // Suma el dígito a la suma
+        cedula <- cedula / 10  // Elimina el último dígito
+    FinMientras
+	
+    Escribir "La suma de los dígitos de la cédula es: ", suma
+FinFuncion
+
+Funcion ejercicio_22
+	Definir palabra, reverso Como Caracter
+    Definir esPalindromo Como Logico
+	
+    Escribir "Ingrese una palabra: "
+    Leer palabra
+	
+    reverso <- ""
+	
+    // Calcular el reverso de la palabra
+    Para i <- Longitud(palabra) Hasta 1 Con Paso -1
+        reverso <- reverso + SubCadena(palabra, i, 1)
+    FinPara
+	
+    Si palabra = reverso
+        esPalindromo <- Verdadero
+    Sino
+        esPalindromo <- Falso
+    FinSi
+	
+    Si esPalindromo
+        Escribir "La palabra es palíndroma."
+    Sino
+        Escribir "La palabra no es palíndroma."
+    FinSi
+	
+FinFuncion
+
+Funcion ejercicio_23
+	Definir cadena Como Caracter
+    Definir caracterBuscado Como Caracter
+    Definir posicion Como Entero
+    Definir i Como Entero
+    Definir encontrado Como Logico
+	
+    Escribir "Ingrese una cadena: "
+    Leer cadena
+	
+    Escribir "Ingrese el carácter que desea buscar: "
+    Leer caracterBuscado
+	
+    posicion <- 0
+    encontrado <- Falso  // Inicializamos la variable de control
+	verificar = Falso
+	Mientras verificar == Falso
+		i = i + 1
+		Si SubCadena(cadena, i, i) = caracterBuscado
+            posicion <- i
+            encontrado <- Verdadero
+            // No necesitamos seguir buscando, salimos del bucle
+			verificar = Verdadero
+        FinSi
+	FinMientras
+	
+    Si encontrado
+        Escribir "El carácter ", caracterBuscado, " se encuentra en la posición ", posicion
+    Sino
+        Escribir "El carácter ", caracterBuscado, " no se encuentra en la cadena."
+    FinSi
+FinFuncion
+	
