@@ -394,6 +394,22 @@ Funcion total = CalcularIva(subtotal)
 FinFuncion
 
 
+Funcion aumento = Aumento_(tipoTarjeta, aumento_1)
+	Si tipoTarjeta = 1
+		aumento = aumento_1[0]
+	SiNo
+		si tipoTarjeta = 2
+			aumento = aumento_1[1]
+		SiNo
+			si tipoTarjeta = 3
+				aumento = aumento_1[2]
+			SiNo
+				aumento = aumento_1[3]
+			FinSi
+		FinSi
+	FinSi
+FinFuncion
+
 //-----------------------------------------------OPERACIONES NUMÉRICAS-----------------------------------------------------------------------------------
 
 
@@ -636,10 +652,8 @@ Funcion ejercicio6
     Escribir "Ingrese el tipo de tarjeta (1, 2, 3 u otro):"
     Leer tipoTarjeta
     Escribir "Ingrese el límite de crédito actual:"
-	Dimension aumento[4]; aumento[1] = 0.25; aumento[2] = 0.35; aumento[3] = 0.40; aumento[4] = 0.50;
+	Dimension aumento_1[4]; aumento_1[0] = 0.25; aumento_1[1] = 0.35; aumento_1[2] = 0.40; aumento_1[3] = 0.50;
     Leer limiteActual
-	
-<<<<<<< HEAD
 //    Si tipoTarjeta = 1 Entonces
 //        aumento <- 0.25 
 //    Sino
@@ -652,32 +666,11 @@ Funcion ejercicio6
 //                aumento <- 0.50 
 //            FinSi
 //        FinSi
-//    FinSi
-    nuevoLimite <- limiteActual * (1 + aumento[i] ) + 20
+	//    FinSi
+	aumento = Aumento_(tipoTarjeta, aumento_1)
+    nuevoLimite <- limiteActual * (1 + aumento ) + 20
     Escribir "El nuevo límite de crédito es: $", nuevoLimite
 FinFuncion
-
-Funcion aumento = Aumento_(tipoTarjeta)
-	
-FinFuncion
-=======
-    Si tipoTarjeta = 1 Entonces
-        aumento <- 0.25 
-    Sino
-        Si tipoTarjeta = 2 Entonces
-            aumento <- 0.35  
-        Sino
-            Si tipoTarjeta = 3 Entonces
-                aumento <- 0.40  
-            Sino
-                aumento <- 0.50 
-            FinSi
-        FinSi
-    FinSi
-    nuevoLimite <- limiteActual * (1+ aumento) + 20
-    Escribir "El nuevo límite de crédito es: $", nuevoLimite
-FinFuncion
-
 
 //7) Escribir un algoritmo que lea cuatro números y determine si el numero 1 es divisor del
 //numero3 Y si el numero 2 es el doble del numero 4
@@ -689,8 +682,6 @@ FinFuncion
 //         Si num2 = num4 * 2 : Escribir "El segundo número es el doble del cuarto número."
 //         Sino Escribir "El segundo número no es el doble del cuarto número."	
 //Salida:  Resultado de la condición si...entonces..
->>>>>>> 1cb4c6a17e132ee587152e7c700f60d9d8214851
-
 Funcion ejercicio7
 	//Declaro mis varibles como entero
 	//Aplico comando si y sino y mod 
@@ -738,26 +729,15 @@ Funcion ejercicio8
 	//y me da resultado final y fin del algoritmo
 	Definir tipoTarjeta Como Entero
 	Definir limiteActual, aumento, nuevoLimite Como Real
-	tipoTarjeta=0; limiteActual=0.0; aumento=0.0; nuevoLimite=0.0
+	tipoTarjeta=0; limiteActual=0.0; aumento=0.0; nuevoLimite=0.0;
+	Dimension aumento_1[4]; aumento_1[0] = 100; aumento_1[1] = 200; aumento_1[2] = 300; aumento_1[3] = 500;
 	
     Escribir "Ingrese el tipo de tarjeta (1, 2, 3 u otro):"
     Leer tipoTarjeta
     Escribir "Ingrese el límite de crédito actual:"
     Leer limiteActual
 	
-    Si tipoTarjeta = 1 Entonces
-        aumento <- 100 
-    Sino
-        Si tipoTarjeta = 2 Entonces
-            aumento <- 200 
-        Sino
-            Si tipoTarjeta = 3 Entonces
-                aumento <- 300  
-            Sino
-                aumento <- 500  
-            FinSi
-        FinSi
-    FinSi
+	aumento = Aumento_(tipoTarjeta, aumento_1)
     nuevoLimite <- (limiteActual + aumento) * 1.10
     Escribir "El nuevo límite de crédito es: $", nuevoLimite
 FinFuncion
