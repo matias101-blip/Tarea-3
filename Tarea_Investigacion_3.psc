@@ -408,22 +408,28 @@ Funcion ejercicio6
     Escribir "Ingrese el tipo de tarjeta (1, 2, 3 u otro):"
     Leer tipoTarjeta
     Escribir "Ingrese el límite de crédito actual:"
+	Dimension aumento[4]; aumento[1] = 0.25; aumento[2] = 0.35; aumento[3] = 0.40; aumento[4] = 0.50;
     Leer limiteActual
-    Si tipoTarjeta = 1 Entonces
-        aumento <- 0.25 
-    Sino
-        Si tipoTarjeta = 2 Entonces
-            aumento <- 0.35  
-        Sino
-            Si tipoTarjeta = 3 Entonces
-                aumento <- 0.40  
-            Sino
-                aumento <- 0.50 
-            FinSi
-        FinSi
-    FinSi
-    nuevoLimite <- limiteActual * (1 + aumento) + 20
+	
+//    Si tipoTarjeta = 1 Entonces
+//        aumento <- 0.25 
+//    Sino
+//        Si tipoTarjeta = 2 Entonces
+//            aumento <- 0.35  
+//        Sino
+//            Si tipoTarjeta = 3 Entonces
+//                aumento <- 0.40  
+//            Sino
+//                aumento <- 0.50 
+//            FinSi
+//        FinSi
+//    FinSi
+    nuevoLimite <- limiteActual * (1 + aumento[i] ) + 20
     Escribir "El nuevo límite de crédito es: $", nuevoLimite
+FinFuncion
+
+Funcion aumento = Aumento_(tipoTarjeta)
+	
 FinFuncion
 
 Funcion ejercicio7
@@ -539,33 +545,29 @@ Funcion ejercicio10
 	Segun tipo_embarque Hacer
 		1:
 			Escribir "          " +"Embarque de tipo Amarilla y tamaño 1"
-			subtotal= precio_inicial + 10
+			subtotal1= precio_inicial + 10
 		2:
 			Escribir "          " +"Embarque de tipo Amarilla y tamaño 2"
-			subtotal= precio_inicial + (precio_inicial * 0.15) + 5
+			subtotal1= precio_inicial + (precio_inicial * 0.15) + 5
 		3:
 			Escribir "          " +"Embarque de tipo Colorada y tamaño 1"
-			subtotal= precio_inicial - 20
+			subtotal1= precio_inicial - 20
 		4: 
 			Escribir "          " +"Embarque de tipo Colorada y tamaño 2"
-			subtotal= precio_inicial + (precio_inicial * 0.20)
+			subtotal1= precio_inicial + (precio_inicial * 0.20)
 		De Otro Modo:
 			Escribir "No existe el tipo de embarque seleccionado"
 	Fin Segun
 	
 	
 	Si tipo_embarque >= 1 y tipo_embarque <= 4 Entonces
-		Descuento = subtotal * 0.05
-		mont_des= subtotal - Descuento
-		imp = mont_des
-		mont_iva= mont_des + imp
-		precio_final= mont_iva
-		
+		Descuento = subtotal1 * 0.05
+		subtotal = subtotal1 - Descuento
 		//Salida:
-		Escribir "Subtotal: $",subtotal
+		Escribir "Subtotal: $",subtotal1
 		Escribir "Descuento 5%: $", Descuento
-		Escribir "Impuesto 12%: $", imp
-		Escribir "Total a pagar: $",precio_final
+		total = CalcularIva(subtotal);
+		Escribir "Total a pagar: $",total;
 	FinSi
 FinFuncion
 
